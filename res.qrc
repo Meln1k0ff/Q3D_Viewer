@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/519666-171_CurvedArrowLeftDown-128.png</file>
+        <file>icons/1408373477_519667-172_CurvedArrowRight.png</file>
+        <file>icons/arrow_down.png</file>
+        <file>icons/arrow_left.png</file>
+        <file>icons/arrow_right.png</file>
+        <file>icons/arrow_up.png</file>
+        <file>icons/close_img.png</file>
+        <file>icons/full_screen.png</file>
+        <file>icons/open_img.png</file>
+        <file>icons/zoom_in.png</file>
+        <file>icons/zoom_out.png</file>
+    </qresource>
+</RCC>

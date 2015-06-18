@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/resources/images">
+        <file>images/519666-171_CurvedArrowLeftDown-128.png</file>
+        <file>images/1408373477_519667-172_CurvedArrowRight.png</file>
+        <file>images/close_img.png</file>
+        <file>images/open_img.png</file>
+        <file>images/zoom_in.png</file>
+        <file>images/zoom_out.png</file>
+    </qresource>
+</RCC>

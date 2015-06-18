@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>rsfs10</family>
+    <stylestrategy>PreferDefault</stylestrategy>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>3D_viewer</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="openModelBtn">
+       <property name="font">
+        <font>
+         <family>Liberation Mono</family>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/icons/icons/open_img.png</normaloff>:/icons/icons/open_img.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="fullScreenModelBtn">
+       <property name="font">
+        <font>
+         <family>Liberation Mono</family>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/icons/icons/full_screen.png</normaloff>:/icons/icons/full_screen.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeModelBtn">
+       <property name="font">
+        <font>
+         <family>Liberation Mono</family>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/icons/icons/close_img.png</normaloff>:/icons/icons/close_img.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="Line" name="bottomLine">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>530</y>
+      <width>1371</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="View3d" name="widget_3d" native="true">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>0</y>
+      <width>1366</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <zorder>right_widget</zorder>
+   </widget>
+   <widget class="Line" name="topLine">
+    <property name="geometry">
+     <rect>
+      <x>-197</x>
+      <y>623</y>
+      <width>1451</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pathLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>550</y>
+      <width>49</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Файл:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="facesLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>590</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Поверхности:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="facesString">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>590</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pointslabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>570</y>
+      <width>92</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Вершины:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pointsString">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>570</y>
+      <width>211</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pathString">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>550</y>
+      <width>461</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="left_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>201</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:#990011;</string>
+    </property>
+    <widget class="QListWidget" name="matlistWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>171</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Liberation Mono</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: 0, 0, 127;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="matLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>79</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Liberation Mono</family>
+      </font>
+     </property>
+     <property name="text">
+      <string>Материалы:</string>
+     </property>
+    </widget>
+    <widget class="QCommandLinkButton" name="hideLeftWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>410</y>
+       <width>31</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/arrow_left.png</normaloff>:/icons/icons/arrow_left.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QCommandLinkButton" name="showLeftWiget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>470</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="res.qrc">
+      <normaloff>:/icons/icons/arrow_right.png</normaloff>:/icons/icons/arrow_right.png</iconset>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="showRightWidget">
+    <property name="geometry">
+     <rect>
+      <x>1320</x>
+      <y>460</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="res.qrc">
+      <normaloff>:/icons/icons/arrow_left.png</normaloff>:/icons/icons/arrow_left.png</iconset>
+    </property>
+   </widget>
+   <widget class="QWidget" name="right_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>10</y>
+      <width>171</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:#990011;</string>
+    </property>
+    <widget class="QPushButton" name="leftButton">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>41</y>
+       <width>31</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/arrow_left.png</normaloff>:/icons/icons/arrow_left.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="rightButton">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>41</y>
+       <width>31</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/arrow_right.png</normaloff>:/icons/icons/arrow_right.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="downButton">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>90</y>
+       <width>71</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/arrow_down.png</normaloff>:/icons/icons/arrow_down.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="upButton">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>10</y>
+       <width>71</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/arrow_up.png</normaloff>:/icons/icons/arrow_up.png</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_x">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>X</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_y">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>190</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Y</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_z">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>230</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Z</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="stepZoomIn">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>280</y>
+       <width>41</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/zoom_in.png</normaloff>:/icons/icons/zoom_in.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="stepZoomOut">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>280</y>
+       <width>41</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/zoom_out.png</normaloff>:/icons/icons/zoom_out.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="optimizeButton">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>310</y>
+       <width>41</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/full_screen.png</normaloff>:/icons/icons/full_screen.png</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_xval">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>150</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="x_rot_up">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>141</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/1408373477_519667-172_CurvedArrowRight.png</normaloff>:/icons/icons/1408373477_519667-172_CurvedArrowRight.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="x_rot_down">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>141</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/519666-171_CurvedArrowLeftDown-128.png</normaloff>:/icons/icons/519666-171_CurvedArrowLeftDown-128.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="y_rot_up">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>180</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/1408373477_519667-172_CurvedArrowRight.png</normaloff>:/icons/icons/1408373477_519667-172_CurvedArrowRight.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="y_rot_down">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>180</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/519666-171_CurvedArrowLeftDown-128.png</normaloff>:/icons/icons/519666-171_CurvedArrowLeftDown-128.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="z_rot_up">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>221</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/1408373477_519667-172_CurvedArrowRight.png</normaloff>:/icons/icons/1408373477_519667-172_CurvedArrowRight.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="z_rot_down">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>220</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/519666-171_CurvedArrowLeftDown-128.png</normaloff>:/icons/icons/519666-171_CurvedArrowLeftDown-128.png</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_yval">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>180</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_zval">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>230</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QCommandLinkButton" name="hideRightWidget">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>400</y>
+       <width>31</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/icons/icons/arrow_right.png</normaloff>:/icons/icons/arrow_right.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="closeLbl">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>610</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="matLab">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>550</y>
+      <width>79</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Материалы:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="matstring">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>550</y>
+      <width>79</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1366</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuModel">
+    <property name="title">
+     <string>Модель</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionClose"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="font">
+     <font>
+      <family>Liberation Mono</family>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>Вид</string>
+    </property>
+    <addaction name="actionZoom_In"/>
+    <addaction name="actionZoom_out"/>
+   </widget>
+   <addaction name="menuModel"/>
+   <addaction name="menuView"/>
+  </widget>
+  <widget class="QToolBar" name="menuToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Открыть</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans Serif</family>
+     <italic>false</italic>
+     <kerning>false</kerning>
+    </font>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Закрыть</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Выйти</string>
+   </property>
+  </action>
+  <action name="actionZoom_In">
+   <property name="text">
+    <string>Приблизить</string>
+   </property>
+   <property name="font">
+    <font/>
+   </property>
+  </action>
+  <action name="actionZoom_out">
+   <property name="text">
+    <string>Отдалить</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionUkrainian">
+   <property name="text">
+    <string>Ukrainian</string>
+   </property>
+  </action>
+  <action name="actionRussian">
+   <property name="text">
+    <string>Russian</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>View3d</class>
+   <extends>QWidget</extends>
+   <header location="global">view3d.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
